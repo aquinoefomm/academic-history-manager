@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+</head>
+<body>
+  <%- include('navbar.ejs') %>
+    <div class="cadastro" style="width: 70%;">        
+        <form action="/inserir" method="post" style="color: rgb(223, 219, 214);">
+            <h1 style="margin-left: 75px;">Cadastro</h1>
+            <div class="form-group" style="width: 300px;">
+              <label for="codigo">Código da Disciplina</label>
+              <input type="number" class="form-control" id="codigo" name="codigo" placeholder="Digite o código" required autofocus>
+            </div>
+            <div class="form-group">
+              <label for="nome">Nome da Discplina</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome" required>
+            </div>
+            <div class="form-group">
+                <label for="carga">Carga horária</label>
+                <input type="number" class="form-control" id="carga" name="carga" placeholder="Digite a carga horária" required>
+              </div>
+              <div class="form-group">
+                <label for="professor">Nome do professor</label>
+                <input type="text" class="form-control" id="professor" name="professor" placeholder="Digite o nome do professor">
+              </div>
+            <button style="margin-top: 10px;" type="submit" class="btn btn-secondary" onclick="clicked(event)">Cadastrar</button>
+          </form>
+    </div>
+    <script>
+      function clicked(e)
+      {
+          if(!confirm('Confirma inclusão do registro?')) {
+              e.preventDefault();
+          }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <%- include('footer.ejs') %>
+</body>
+</html>
